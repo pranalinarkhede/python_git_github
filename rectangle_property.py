@@ -23,8 +23,17 @@ class Rectangle:
             raise ValueError("Height must be positive")
         self._height = value
     
-    
+    @property
+    def perimeter(self):
+        print("Perimeter of rectangle : ",2*(self._height + self._width))
+        
+    @property
+    def area(self):
+        print("Area of rectangle : ",self._height * self._width)
+
 
 r = Rectangle(32, 48)
 r.width
 r.height
+r.perimeter
+r.area
