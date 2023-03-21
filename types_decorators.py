@@ -31,3 +31,20 @@ obj = MyClass()
 print(obj.attr)
 print(obj.new_attr)
 obj.my_method()
+
+# 3. method decorator
+print("\nMethod Decorator :")
+def method_decorator(func):
+    def wrapper(self):
+        print("Before the method is called")
+        func(self)
+        print("After the method is called")
+    return wrapper
+
+class MyClass:
+    @method_decorator
+    def my_method(self):
+        print("Hello from MyClass")
+
+obj = MyClass()
+obj.my_method()
