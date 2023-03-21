@@ -48,3 +48,22 @@ class MyClass:
 
 obj = MyClass()
 obj.my_method()
+
+# 4. parameterized decorator
+print("\nParameterized Decorator :")
+def parameterized_decorator(num):
+    def decorator(fn):
+        def wrapper():
+            print("Before the function is called")
+            for i in range(num):
+                fn()
+            print("After the function is called")
+        return wrapper
+    return decorator
+
+@parameterized_decorator(num=3)
+def hello():
+    print("Hello!")
+
+hello()
+
