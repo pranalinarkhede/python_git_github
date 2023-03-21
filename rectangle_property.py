@@ -1,0 +1,2 @@
+# property concept in python
+
