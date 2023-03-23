@@ -15,7 +15,14 @@ class argsBasic():
 
         print("Multiplication:",mul)
         
-         
+    
+    def toList(self, *args):
+        lst = []
+        
+        print("List generated:",list(args))
+        
+             
 c = argsBasic()
-c.adder(5,5,5)
-c.multiplier(5,5,5)
+c.adder(5,45,89, 12, 47, 82)
+c.multiplier(3, 67, 88)
+c.toList('apple','grapes','pineapple','pear','mango')
