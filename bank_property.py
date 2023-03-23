@@ -1,23 +1,20 @@
-import uuid
+# import uuid
 
 class BankAccount:
     
-    def __init__(self, account_type):
-        self._account_type = account_type
+    def __init__(self):
+        # self._account_type = account_type
         self._balance = 0
-        self._account_number = uuid.uuid4().hex
+        # self._account_number = uuid.uuid4().hex
 
     @property
     def balance(self):
-        return self._balance
+        print("Current balance : ",self._balance)
     
-    @property
-    def account_number(self):
-        return self._account_number
+    # @property
+    # def account_number(self):
+        # return self._account_number
     
-    @property
-    def account_type(self):
-        return self._account_type
     
     def deposit(self, amount):
         if amount < 0:
@@ -31,4 +28,8 @@ class BankAccount:
             raise ValueError("Insufficient funds")
         self._balance -= amount
         
-    
+b = BankAccount()
+b.deposit(3500)
+b.withdraw(400)
+print(b.balance)
+
